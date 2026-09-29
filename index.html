@@ -1,91 +1,365 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacy Policy — PC Master Control</title>
-  <style>
-    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #222; margin: 0; padding: 0; background:#f7f7f7; }
-    .container { max-width: 900px; margin: 40px auto; background:#fff; padding:28px 36px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-radius:8px; }
-    h1 { margin-top:0; font-size:1.6rem; }
-    h2 { margin:1.2rem 0 0.6rem; font-size:1.1rem; }
-    p { margin:0.5rem 0; }
-    ul { margin:0.4rem 0 0.8rem 1.2rem; }
-    .meta { color:#555; font-size:0.95rem; margin-bottom:1rem; }
-    .contact { background:#f1f5f9; padding:12px; border-radius:6px; margin-top:1rem; }
-    footer { margin-top:1.6rem; font-size:0.9rem; color:#555; }
-    code { background:#eef2f7; padding:2px 6px; border-radius:4px; font-family:monospace; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - PCLink & PC Master</title>
+    <meta name="description" content="Privacy Policy for PCLink & PC Master Universal Controller Android application. 100% Local Peer-to-Peer, Zero Cloud Dependency, Zero Tracking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-card: rgba(18, 24, 38, 0.85);
+            --border-color: rgba(64, 120, 224, 0.22);
+            --text-main: #f0f4fc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-cyan: #00d2ff;
+            --accent-blue: #3a86ff;
+            --accent-purple: #8338ec;
+            --accent-green: #10b981;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(58, 134, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(131, 56, 236, 0.12) 0%, transparent 45%);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 960px; margin: 0 auto; }
+        header {
+            text-align: center; margin-bottom: 50px; padding: 40px 25px;
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 24px; backdrop-filter: blur(16px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+            position: relative; overflow: hidden;
+        }
+        header::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue), var(--accent-purple));
+        }
+        .badge {
+            display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;
+            border-radius: 999px; font-size: 0.82rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;
+            background: rgba(16, 185, 129, 0.15); color: var(--accent-green);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+        }
+        h1 {
+            font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 650px; margin: 0 auto 20px; }
+        .meta-bar {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
+            padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem; color: var(--text-muted);
+        }
+        .meta-bar strong { color: var(--text-secondary); }
+        .toc-card {
+            background: rgba(18, 24, 38, 0.65); border: 1px solid var(--border-color);
+            border-radius: 18px; padding: 24px 30px; margin-bottom: 40px;
+        }
+        .toc-title {
+            font-size: 1rem; font-weight: 700; color: var(--accent-cyan);
+            text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px;
+        }
+        .toc-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px; list-style: none;
+        }
+        .toc-grid a {
+            color: var(--text-secondary); text-decoration: none; font-size: 0.92rem;
+            display: flex; align-items: center; gap: 6px; padding: 6px 10px;
+            border-radius: 8px; transition: all 0.2s ease;
+        }
+        .toc-grid a:hover {
+            color: var(--text-main); background: rgba(58, 134, 255, 0.15); transform: translateX(4px);
+        }
+        .section-card {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 20px; padding: 36px 32px; margin-bottom: 30px;
+            backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+        .section-header {
+            display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+            padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .section-icon {
+            font-size: 1.6rem; display: flex; align-items: center; justify-content: center;
+            width: 44px; height: 44px; border-radius: 12px;
+            background: rgba(58, 134, 255, 0.15); border: 1px solid rgba(58, 134, 255, 0.3);
+        }
+        h2 { font-size: 1.5rem; font-weight: 700; color: #ffffff; }
+        p { margin-bottom: 14px; color: var(--text-secondary); font-size: 0.98rem; }
+        p strong, li strong { color: var(--text-main); }
+        ul, ol { margin-left: 20px; margin-bottom: 16px; color: var(--text-secondary); }
+        li { margin-bottom: 8px; font-size: 0.96rem; }
+        .callout {
+            background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent-green);
+            border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 20px 0;
+        }
+        .table-wrapper {
+            overflow-x: auto; margin: 20px 0; border-radius: 14px;
+            border: 1px solid var(--border-color);
+        }
+        table {
+            width: 100%; border-collapse: collapse; text-align: left;
+            font-size: 0.92rem; background: rgba(14, 20, 32, 0.7);
+        }
+        th {
+            background: rgba(24, 34, 52, 0.9); color: var(--accent-cyan);
+            font-weight: 700; padding: 14px 18px; border-bottom: 1px solid var(--border-color);
+            text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.06em;
+        }
+        td {
+            padding: 14px 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary); vertical-align: top;
+        }
+        tr:hover td { background: rgba(58, 134, 255, 0.06); }
+        code {
+            font-family: var(--font-mono); background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-cyan); padding: 2px 7px; border-radius: 6px;
+            font-size: 0.85em; border: 1px solid rgba(0, 210, 255, 0.2); white-space: nowrap;
+        }
+        .tag-status {
+            display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 3px 8px;
+            border-radius: 6px; background: rgba(16, 185, 129, 0.18); color: var(--accent-green);
+            border: 1px solid rgba(16, 185, 129, 0.3); white-space: nowrap;
+        }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px;
+            border-radius: 12px; font-size: 0.95rem; font-weight: 600; text-decoration: none;
+            color: #ffffff; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            box-shadow: 0 4px 14px rgba(58, 134, 255, 0.35);
+        }
+        .btn-outline {
+            background: transparent; border: 1px solid var(--border-color); color: var(--text-main);
+        }
+        footer {
+            text-align: center; padding: 35px 20px; color: var(--text-muted);
+            font-size: 0.88rem; border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: 40px;
+        }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
+    </style>
 </head>
 <body>
-  <main class="container" role="main">
+
+<div class="container">
+
     <header>
-      <h1>Privacy Policy</h1>
-      <p class="meta"><strong>PC Master Control</strong> — Last Updated: <strong>October 26, 2023</strong></p>
+        <div class="badge">
+            <span>🔒</span> 100% Zero Data Collection • Local Peer-to-Peer
+        </div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">PCLink &amp; PC Master Remote Cockpit Ecosystem</p>
+        <div class="meta-bar">
+            <span><strong>Application:</strong> PCLink (Android) &amp; PC Master (Windows Server)</span>
+            <span><strong>Effective Date:</strong> September 29, 2026</span>
+            <span><strong>Version:</strong> 2.5.0 Pro</span>
+            <span><strong>Developer:</strong> Beyond Edge</span>
+        </div>
     </header>
 
-    <section>
-      <p>PC Master Control ("we," "our," or "us") provides a remote management and monitoring application for your personal computer. Your privacy is important to us. This Privacy Policy explains how we handle your information.</p>
+    <nav class="toc-card">
+        <div class="toc-title"><span>📑</span> Table of Contents</div>
+        <ul class="toc-grid">
+            <li><a href="#overview">1. Overview &amp; Privacy Philosophy</a></li>
+            <li><a href="#permissions">2. Device Permissions &amp; Technical Use</a></li>
+            <li><a href="#data-collection">3. Information We Collect (None)</a></li>
+            <li><a href="#remote-control">4. Universal Remote (IR &amp; Wi-Fi)</a></li>
+            <li><a href="#screen-mirroring">5. Screen Mirroring &amp; Media Projection</a></li>
+            <li><a href="#notifications">6. Notification Sync Service</a></li>
+            <li><a href="#security">7. Data Security &amp; Local Network Safety</a></li>
+            <li><a href="#third-parties">8. Third-Party Services &amp; Ads</a></li>
+            <li><a href="#children">9. Children’s Privacy (COPPA/GDPR)</a></li>
+            <li><a href="#retention-deletion">10. Data Retention &amp; User Rights</a></li>
+            <li><a href="#contact">11. Contact &amp; Developer Support</a></li>
+        </ul>
+    </nav>
+
+    <section id="overview" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">🏛️</div>
+            <h2>1. Overview &amp; Privacy Philosophy</h2>
+        </div>
+        <p>Welcome to <strong>PCLink</strong>, developed by <strong>Beyond Edge</strong>. PCLink provides high-performance PC remote control over local Wi-Fi and standalone Universal Remote control for household appliances via IR Blaster and local network protocols.</p>
+        <div class="callout">
+            <p><strong>Our Core Privacy Guarantee:</strong> PCLink operates on a strict <strong>100% Peer-to-Peer (P2P) Local Area Network (LAN)</strong> architecture. We do not operate cloud databases, relay servers, or tracking telemetry. Your keystrokes, notifications, files, screen pixels, and remote commands <strong>NEVER leave your local network</strong>.</p>
+        </div>
     </section>
 
-    <section>
-      <h2>1. Information We Collect</h2>
-
-      <h3>a. Technical Data</h3>
-      <p>To facilitate the connection between your Android device and your PC, the app may collect and process:</p>
-      <ul>
-        <li><strong>IP Addresses</strong>: To identify and connect to your PC on the local network.</li>
-        <li><strong>System Statistics</strong>: CPU usage, GPU usage, RAM usage, storage details, and battery status from the connected PC.</li>
-      </ul>
-
-      <h3>b. Files and Media</h3>
-      <ul>
-        <li><strong>File Transfer</strong>: The app allows you to browse and transfer files between your Android device and your connected PC. We do not store these files on our servers; they remain on your local devices.</li>
-        <li><strong>Screen Mirroring</strong>: The app uses Android's Screen Capture API to mirror your Android screen to your PC. This data is transmitted directly over your local network and is not stored or shared by us.</li>
-      </ul>
+    <section id="permissions" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">🔑</div>
+            <h2>2. Android Permissions &amp; Technical Justification</h2>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Android Permission</th>
+                        <th>Feature / Module</th>
+                        <th>Technical Purpose</th>
+                        <th>Data Handling</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>android.permission.INTERNET</code></td>
+                        <td>Local Socket &amp; Wi-Fi Control</td>
+                        <td>Establishes direct WebSocket and HTTP REST connections to your PC server (e.g. <code>192.168.x.x:8099</code>) and local Smart TVs/Streaming devices.</td>
+                        <td><span class="tag-status">100% Local Only</span><br>Never connects to external cloud servers.</td>
+                    </tr>
+                    <tr>
+                        <td><code>android.permission.ACCESS_NETWORK_STATE</code><br><code>android.permission.ACCESS_WIFI_STATE</code></td>
+                        <td>Connection &amp; Subnet Discovery</td>
+                        <td>Detects Wi-Fi connection state and identifies local subnet IP ranges for direct pairing.</td>
+                        <td><span class="tag-status">No Collection</span><br>Read locally in volatile memory only.</td>
+                    </tr>
+                    <tr>
+                        <td><code>android.permission.TRANSMIT_IR</code></td>
+                        <td>Universal Remote (IR Blaster)</td>
+                        <td>Pulses the phone’s hardware Consumer Infrared diode (20–60 kHz) to control TVs, Sun Direct DTH, ACs, and Fans.</td>
+                        <td><span class="tag-status">Hardware Output</span><br>Sends pulse timings; zero data read.</td>
+                    </tr>
+                    <tr>
+                        <td><code>android.permission.BIND_NOTIFICATION_LISTENER_SERVICE</code></td>
+                        <td>Notification Sync (Optional)</td>
+                        <td>Allows users who explicitly enable this service to mirror notifications locally to their PC desktop tray.</td>
+                        <td><span class="tag-status">Ephemeral RAM</span><br>Never saved, recorded, or uploaded.</td>
+                    </tr>
+                    <tr>
+                        <td><code>android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION</code></td>
+                        <td>Screen Mirroring</td>
+                        <td>Streams phone display frames live to PC when user taps "Start Screen Mirroring".</td>
+                        <td><span class="tag-status">Real-Time Ephemeral</span><br>Zero recordings saved to disk.</td>
+                    </tr>
+                    <tr>
+                        <td><code>android.permission.READ_MEDIA_IMAGES</code><br><code>WRITE_EXTERNAL_STORAGE</code></td>
+                        <td>Wireless File Hub</td>
+                        <td>Allows users to explicitly transfer selected files between phone and PC over local Wi-Fi.</td>
+                        <td><span class="tag-status">User-Initiated</span><br>Only user-selected files are transferred.</td>
+                    </tr>
+                    <tr>
+                        <td><code>android.permission.FOREGROUND_SERVICE</code><br><code>POST_NOTIFICATIONS</code></td>
+                        <td>Connection Persistence</td>
+                        <td>Maintains background socket and displays active connection status in system tray.</td>
+                        <td><span class="tag-status">System Requirement</span><br>Connection icon only.</td>
+                    </tr>
+                    <tr>
+                        <td><code>android.permission.VIBRATE</code></td>
+                        <td>Haptic Feedback</td>
+                        <td>Provides tactile vibration on virtual remote and trackpad taps.</td>
+                        <td><span class="tag-status">Hardware Only</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
-    <section>
-      <h2>2. Permissions Used</h2>
-      <p>The app may request the following permissions to provide its features:</p>
-      <ul>
-        <li><strong>Internet / Network</strong>: Required to communicate with your PC.</li>
-        <li><strong>Wi‑Fi State</strong>: Used for discovering PCs on your local network.</li>
-        <li><strong>Foreground Service</strong>: Used to maintain screen mirroring and connection stability.</li>
-        <li><strong>Storage / Media</strong>: Required for the File Transfer feature.</li>
-      </ul>
+    <section id="data-collection" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">🛡️</div>
+            <h2>3. Information We Collect (Zero Data Collection)</h2>
+        </div>
+        <ul>
+            <li><strong>No Personal Identifiable Information (PII):</strong> No names, email addresses, phone numbers, contacts, or GPS locations are collected.</li>
+            <li><strong>No Account Sign-in:</strong> No login, registration, or passwords required.</li>
+            <li><strong>No Telemetry or Analytics:</strong> Zero tracking of your button presses, sessions, or PC activities.</li>
+            <li><strong>No Ad SDKs:</strong> 100% free of advertising banners, video ads, or marketing trackers.</li>
+        </ul>
     </section>
 
-    <section>
-      <h2>3. Data Usage and Security</h2>
-      <ul>
-        <li><strong>No Third-Party Sharing</strong>: We do not sell, trade, or otherwise transfer your information to outside parties.</li>
-        <li><strong>Local Communication</strong>: Most data transmission occurs over your local network (LAN) and does not leave your private environment unless you have specifically configured your network for remote access.</li>
-        <li><strong>No Data Retention</strong>: We do not collect or store any of your personal data on any external servers.</li>
-      </ul>
+    <section id="remote-control" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">📱</div>
+            <h2>4. Universal Remote (IR Blaster &amp; Local Wi-Fi)</h2>
+        </div>
+        <p>The Universal Remote is <strong>100% decoupled from the PC Master server</strong>. Commands sent to Smart TVs, Sun Direct DTH boxes, Fire TV sticks, ACs, or Fans go directly to the respective appliance without affecting PC audio or PC controls.</p>
     </section>
 
-    <section>
-      <h2>4. Third-Party Services</h2>
-      <p>The app does not use any third-party analytics or advertising SDKs that collect your data.</p>
+    <section id="screen-mirroring" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">🖥️</div>
+            <h2>5. Screen Mirroring &amp; Media Projection</h2>
+        </div>
+        <p>Screen mirroring requires explicit user consent on every session. Frames are encoded in-memory and sent directly over your private Wi-Fi network. No video files or screenshots are stored or transmitted outside.</p>
     </section>
 
-    <section>
-      <h2>5. Changes to This Policy</h2>
-      <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes.</p>
+    <section id="notifications" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">🔔</div>
+            <h2>6. Notification Sync Service</h2>
+        </div>
+        <p>This optional feature allows you to mirror notifications to your PC tray over LAN while gaming. Notifications are never saved to disk, never sent to external servers, and discarded immediately after display.</p>
     </section>
 
-    <section>
-      <h2>6. Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, please contact us:</p>
-      <div class="contact">
-        <p><strong>Email:</strong> <a href="mailto:novamusicpro2025@gmail.com">novamusicpro2025@gmail.com</a></p>
-      </div>
+    <section id="security" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">🔒</div>
+            <h2>7. Data Security &amp; Local Network Safety</h2>
+        </div>
+        <p>PCLink includes optional Security Token authentication to ensure only authorized devices on your Wi-Fi can connect to your PC. All preferences are saved strictly on your local device.</p>
+    </section>
+
+    <section id="third-parties" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">🚫</div>
+            <h2>8. Third-Party Services, SDKs &amp; Advertisements</h2>
+        </div>
+        <p>PCLink contains zero third-party advertisement SDKs (no AdMob, Facebook Ads, Unity Ads) and zero commercial tracking libraries (no Firebase Analytics, AppsFlyer, Flurry).</p>
+    </section>
+
+    <section id="children" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">👶</div>
+            <h2>9. Children’s Privacy (COPPA &amp; GDPR Compliance)</h2>
+        </div>
+        <p>Because no personal data is collected or transmitted, PCLink is fully compliant with COPPA and GDPR. It is safe for all age groups.</p>
+    </section>
+
+    <section id="retention-deletion" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">🗑️</div>
+            <h2>10. Data Retention, Deletion &amp; Your Rights</h2>
+        </div>
+        <p>Since we do not store your data on any server, there is no data to retain or delete. You can clear local settings anytime by clearing app data or uninstalling the app.</p>
+    </section>
+
+    <section id="contact" class="section-card">
+        <div class="section-header">
+            <div class="section-icon">✉️</div>
+            <h2>11. Developer Contact &amp; Community Support</h2>
+        </div>
+        <div style="margin: 20px 0; padding: 20px; background: rgba(255, 255, 255, 0.04); border-radius: 14px; border: 1px solid var(--border-color);">
+            <p style="margin-bottom: 8px;"><strong>Developer:</strong> Beyond Edge</p>
+            <p style="margin-bottom: 8px;"><strong>Official Support Email:</strong> <a href="mailto:novamusicpro2025@gmail.com" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">novamusicpro2025@gmail.com</a></p>
+            <p style="margin-bottom: 8px;"><strong>YouTube Channel:</strong> <a href="https://youtube.com/@BeyondEdge1995" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Beyond Edge (@BeyondEdge1995)</a></p>
+            <p style="margin: 0;"><strong>Other Google Play Apps:</strong> NovaMusicPro - Share_shorts, MathRush : Brain Training</p>
+        </div>
+        <div class="btn-group">
+            <a href="mailto:novamusicpro2025@gmail.com?subject=PCLink%20Privacy%20Inquiry" class="btn"><span>✉️</span> Contact Developer</a>
+            <a href="https://youtube.com/@BeyondEdge1995" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><span>📺</span> Watch Tutorials</a>
+        </div>
     </section>
 
     <footer>
-      <p>© PC Master Control. All rights reserved.</p>
+        <p>&copy; 2026 <strong>Beyond Edge</strong> &amp; PC Master Project. All rights reserved.</p>
     </footer>
-  </main>
+
+</div>
+
 </body>
 </html>
